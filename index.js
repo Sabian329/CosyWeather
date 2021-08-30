@@ -50,10 +50,10 @@ let sunrise = document.querySelector(".sunrise");
 
 let unix_sunrise = json.sys.sunrise,
 date = new Date(unix_sunrise * 1000),
-hours = date.getHours(),
+hours = "0" +date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
-formattedTimeSunrise = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+formattedTimeSunrise = hours + ':' + minutes.substr(-2) ;
 console.log(formattedTimeSunrise);
 
 sunrise.innerHTML = "sunrise "+formattedTimeSunrise
@@ -72,7 +72,7 @@ date = new Date(unix_sunset * 1000),
 hours = date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
-formattedTimeSunset = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+formattedTimeSunset = hours + ':' + minutes.substr(-2);
 console.log(formattedTimeSunset);
 
 sunset.innerHTML ="sunset " +formattedTimeSunset

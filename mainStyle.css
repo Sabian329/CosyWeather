@@ -47,6 +47,11 @@ h1{
       color: white;
       backdrop-filter: blur(400px);
       border-radius: 10vh;
+      
+      border-radius: 89px;
+      background: #5f0700;
+      box-shadow:  50px 50px 100px #260300,
+                   -50px -50px 100px #980b00;
 }
 .forecast p{
       text-align: right;
@@ -80,9 +85,14 @@ width: 30vw;
       margin: 3vh;
       width: 90vw;
       height: 40vh;
+      border-radius: 50px;
+      background: linear-gradient(145deg, #aa1f003a, #ca2700);
+      box-shadow:  5px 5px 10px #4c0e0079,
+             -5px -5px 10px #ff3c004b;
+      padding: 2vh;       
 }
 .actual-weather-condytion div{
-      background-color: rgba(139, 139, 139, 0.281);
+     
       width: 45vw;
       height: 20vh;
       text-align: center;
@@ -96,7 +106,13 @@ font-size: 1.2rem;
 }
 
 .actual-weather-condytion img{
+      padding-top: 2vh;
       width: 10vw;
 }
-
+.actual-weather-condytion div p{
+      font-size: 1.1rem;
+      font-weight: 600;
+      
+}
+a
 
