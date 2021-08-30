@@ -1,0 +1,46 @@
+{
+      "coord": {
+      "lon": 16.1619,
+      "lat": 51.2101
+      },
+      "weather": [
+      {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+      }
+      ],
+      "base": "stations",
+      "main": {
+      "temp": 297.05,
+      "feels_like": 296.88,
+      "temp_min": 297.05,
+      "temp_max": 297.12,
+      "pressure": 1019,
+      "humidity": 53,
+      "sea_level": 1019,
+      "grnd_level": 1005
+      },
+      "visibility": 10000,
+      "wind": {
+      "speed": 2.75,
+      "deg": 286,
+      "gust": 5.6
+      },
+      "clouds": {
+      "all": 76
+      },
+      "dt": 1628524059,
+      "sys": {
+      "type": 2,
+      "id": 2033484,
+      "country": "PL",
+      "sunrise": 1628479949,
+      "sunset": 1628533759
+      },
+      "timezone": 7200,
+      "id": 3093692,
+      "name": "Legnica",
+      "cod": 200
+      }

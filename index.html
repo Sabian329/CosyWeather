@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="opis witryny">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API</title>
+    <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+    
+    <img src="images/overcast-white.png" class = "weather-icon">
+       
+    <header class="city-name"  onclick="weatherFunction(true)"> No service</header>
+   
+         <h3 class="weather-description">Please</h3>
+
+        <h1 class="city-cord">Wait</h1>
+       
+        
+        <section class="actual-weather-condytion">
+
+                <div> 
+                    <h3>
+                        <img src="images/pressure.png" alt="pressure">
+                    </h3>
+                         <p class="pressure-value"></p>
+                 </div>
+            
+                <div>
+                    <h3> 
+                        <img src="images/sunrise.png" alt="sun icon">
+                    </h3>
+                        <p class="sunrise"></p>
+                        <p class="sunset"></p>
+                </div>
+            
+                 <div>
+                     <h3> 
+                         <img src="images/wind.png" alt="">
+                     </h3>
+                            <p class="wind-speed"></p>
+                            <p class="wind-direction"></p>
+                </div>
+            
+                 <div>
+                     <h3> 
+                         <img src="images/humidity.png" alt="">
+                     </h3>
+                            <p class="humidity"></p>
+                </div>
+
+        </section>
+
+
+            <section class="forecast">
+                
+                <div> 
+                    <p class="firstDayForecast">Monday</p>
+                    <p class="firstDayP" id="right-foreast-description">Rain</p>
+                                 <h2 class="first-day-temp">10°C</h2>  
+                                <img src="images/overcast-white.png">        
+                </div>
+                    
+                <div> 
+                    <p class="secondDayForecast">Monday</p>
+                    <p class="secondDayP" id="right-foreast-description">Rain</p>
+                                 <h2 class="second-day-temp">10°C</h2>  
+                                <img src="images/overcast-white.png">        
+                </div>
+                
+                <div> 
+                    <p class="thirdDayForecast">Monday</p>
+                    <p class="thirdDayP" id="right-foreast-description">Rain</p>
+                                 <h2 class="third-day-temp">10°C</h2>  
+                                <img src="images/overcast-white.png">        
+                </div>
+
+                <div> 
+                    <p class="fourthDayForecast">Monday</p>
+                    <p class="fourthDayP" id="right-foreast-description">Rain</p>
+                                 <h2 class="fourth-day-temp">10°C</h2>  
+                                <img src="images/overcast-white.png" >       
+                </div>
+      
+                    </section>
+                    
+    
+    <script src="index.js"></script>
+    <script src="forecast.js"></script>
+</body>
