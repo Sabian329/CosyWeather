@@ -6,6 +6,7 @@ let cityNumber = 0
 
 async function weatherFunction(bool){
 
+
        let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg"];
 
 if(bool == true){
@@ -13,6 +14,12 @@ if(bool == true){
 
        if( cityNumber == 11){
               cityNumber = 0
+       }
+}else if (bool == false){
+              if(cityNumber == 0){
+              cityNumber = 10
+       }else{
+              cityNumber --
        }
 
 }
@@ -26,7 +33,7 @@ let link = "https://api.openweathermap.org/data/2.5/weather?q="+ citiesList[city
       
       let cityName =document.querySelector('header'),
      weatherDescription =document.querySelector(".weather-description")
-       temperature =document.querySelector('h1');
+       temperature =document.querySelector('.city-cord');
 
       // Add city name
  cityName.innerHTML =json.name 
@@ -98,6 +105,11 @@ humidity.innerHTML = json.main.humidity + " %"
 
 }
 
+
+
+
+
+
 weatherFunction();
 // setInterval(() => {weatherFunction()}, 20000); 
 
@@ -125,6 +137,9 @@ function   changeCityFunc(){
        a = a+1
 return a
 }
+
+
+
 
 
 

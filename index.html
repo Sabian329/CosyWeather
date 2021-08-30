@@ -9,10 +9,15 @@
 </head>
 <body>
     
-    <img src="images/overcast-white.png" class = "weather-icon">
-       
-    <header class="city-name"  onclick="weatherFunction(true)"> No service</header>
-   
+    <img src="images/pin.png" class = "weather-icon">
+    
+    <div class="city-name-wraper">
+    <button onclick="weatherFunction(true)"><img class="arrow-img" src="images/next — kopia.png" alt="arrow"></button>
+    <header class="city-name"  > No service</header>
+    <button onclick="weatherFunction(false)"><img class="arrow-img" src="images/next.png" alt="arrow"></button>
+    </div>
+
+
          <h3 class="weather-description">Please</h3>
 
         <h1 class="city-cord">Wait</h1>
@@ -87,5 +92,5 @@
                     
     
     <script src="index.js"></script>
-    <!-- <script src="forecast.js"></script> -->
+    <script src="forecast.js"></script>
 </body>
