@@ -1,31 +1,43 @@
-
-
+document.addEventListener('click', () => {}); 
 
 
 let cityNumber = 0
 
-async function weatherFunction(bool){
+async function weatherFunction(){
+
+       let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"].sort();
+      
+    
 
 
-       let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg"];
+let citiesPrint = document.querySelector(".cities-print");
 
-if(bool == true){
-       cityNumber ++
+       citiesList.forEach((item)=>{
+              let li = document.createElement("li");
+              li.innerText = item;
+              citiesPrint.appendChild(li);
+              li.classList.add("cities-names-li");
+            })
 
-       if( cityNumber == 11){
-              cityNumber = 0
-       }
-}else if (bool == false){
-              if(cityNumber == 0){
-              cityNumber = 10
-       }else{
-              cityNumber --
-       }
 
-}
+let singleCity = document.querySelector(".cities-print li");
 
-let link = "https://api.openweathermap.org/data/2.5/weather?q="+ citiesList[cityNumber] +" ,pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
-//abc
+console.log(singleCity.textContent);
+
+singleCity.style.backgroundColor = "black";
+
+
+
+let citiesPrintSelect = document.querySelector(".cities-print-selector")
+
+       citiesPrintSelect.addEventListener("mouseover", ()=>{citiesPrint.style.display = "block"});
+
+              citiesPrintSelect.addEventListener("mouseout", ()=>{citiesPrint.style.display = "none"});
+
+              
+
+ let link = "https://api.openweathermap.org/data/2.5/weather?q="+ citiesList[cityNumber] +" ,pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
+
 
        const response = await fetch (link);
       const json = await response.json( );
@@ -37,6 +49,7 @@ let link = "https://api.openweathermap.org/data/2.5/weather?q="+ citiesList[city
 
       // Add city name
  cityName.innerHTML =json.name 
+
 
       //Add temperature valiue and round
        temperature.innerHTML = Math.round( Number(json.main.temp)) + "°C";
@@ -122,11 +135,11 @@ const timeFunction = () =>{
  var today = new Date();
 var time = today.getHours()
      
-if(time>19){
-             body.style.backgroundImage = " url('images/evening-darkmode.png')"
-      }else{
-             body.style.backgroundImage = " url('images/evening.png')"  
-      }
+// if(time>19){
+//              body.style.backgroundImage = " url('images/evening-darkmode.png')"
+//       }else{
+//              body.style.backgroundImage = " url('images/evening.png')"  
+//       }
 
 }
 timeFunction();

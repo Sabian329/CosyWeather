@@ -2,20 +2,38 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="opis witryny">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>API</title>
-    <link rel="stylesheet" href="mainStyle.css">
+        <meta name="description" content="opis witryny">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                 <title>Weather Forecast</title>
+                    <link rel="stylesheet" href="mainStyle.css">
+                        <link rel="stylesheet" href="node_modules/hamburger-menu/dist/hamburger-menu.css">
 </head>
 <body>
     
-    <img src="images/pin.png" class = "weather-icon">
+    <nav class=hamburger-menu>
+   <a class=hamburger href=#>&#9776;</a>
+   <aside >
+      <ul >
+         
+        <li><a>Home</a></li>
+        
+         <li class="cities-print-selector" value="true"><a>Select City</a>
+            <ul class="cities-print"> </ul>
+        </li>
+        
+        <li><a>Select Country</a></li>
+         <li><a>Darkmode</a></li>
+      </ul>
+   </aside>
+</nav>
+
+    <img src="images/pin_white.png" class = "weather-icon">
     
-    <div class="city-name-wraper">
-    <button onclick="weatherFunction(true)"><img class="arrow-img" src="images/next — kopia.png" alt="arrow"></button>
-    <header class="city-name"  > No service</header>
-    <button onclick="weatherFunction(false)"><img class="arrow-img" src="images/next.png" alt="arrow"></button>
-    </div>
+            <div class="city-name-wraper">
+    
+                        <header class="city-name" onclick="weatherFunction()"  > No service</header>
+
+            </div>
 
 
          <h3 class="weather-description">Please</h3>
@@ -27,7 +45,7 @@
 
                 <div> 
                     <h3>
-                        <img src="images/pressure.png" alt="pressure">
+                        <img src="images/pressure-new.png" alt="pressure">
                     </h3>
                          <p class="pressure-value"></p>
                  </div>
@@ -90,7 +108,6 @@
       
                     </section>
                     
-    
     <script src="index.js"></script>
-    <script src="forecast.js"></script>
+    <!-- <script src="forecast.js"></script> -
 </body>
