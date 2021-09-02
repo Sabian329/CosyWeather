@@ -11,6 +11,11 @@ cityInput.addEventListener("click", ()=>{cityInput.value=""})
 
 
 
+let searchBtn = document.querySelector(".search-btn");
+searchBtn.addEventListener("click", ()=>{document.querySelector(".type-city").style.display = "none"})
+
+
+
 async function weatherFunction(){
 
        let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"];
