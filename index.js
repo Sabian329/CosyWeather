@@ -1,53 +1,50 @@
-
-let cityNumber = 0
+// click on pin- display input
 let pinIcon = document.querySelector(".weather-icon");
-
-
 pinIcon.addEventListener("click", () => {document.querySelector(".type-city").style.display = "flex"});
 
-let cityInput = document.querySelector(".city-input");
 
+//click on input- reset input value
+let cityInput = document.querySelector(".city-input");
 cityInput.addEventListener("click", ()=>{cityInput.value=""})
 
-
-
+//click on search - display none for input & button
 let searchBtn = document.querySelector(".search-btn");
 searchBtn.addEventListener("click", ()=>{document.querySelector(".type-city").style.display = "none"})
 
 
 
+let cityNumber = 0
+let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"];
+
+
+
+//print citiesList to input list
+let citiesPrint = document.querySelector("#cities-input-list");
+citiesList.forEach((item)=>{
+       let opt = document.createElement("option");
+       opt.innerText = item;
+       citiesPrint.appendChild(opt);
+     });
+
+
+
+
+
 async function weatherFunction(){
-
-       let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"];
-
-
-       let citiesPrint = document.querySelector("#cities-input-list");
-
-       citiesList.forEach((item)=>{
-              let opt = document.createElement("option");
-              opt.innerText = item;
-              citiesPrint.appendChild(opt);
-            })
-;
+      
 let cityInput = document.querySelector(".city-input");
-
-let city = citiesList[cityNumber];
-
 
 city = cityInput.value;
    
-
-
-
- let link = "https://api.openweathermap.org/data/2.5/weather?q="+ city+",pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
+ let link = `https://api.openweathermap.org/data/2.5/weather?q= ${city} ,pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059`;
 
 
        const response = await fetch (link);
-      const json = await response.json( );
-      
+        const json = await response.json( );
+       
       
       let cityName =document.querySelector('header'),
-     weatherDescription =document.querySelector(".weather-description")
+       weatherDescription =document.querySelector(".weather-description")
        temperature =document.querySelector('.city-cord');
 
       // Add city name
@@ -76,8 +73,6 @@ hours = "0" +date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
 formattedTimeSunrise = hours + ':' + minutes.substr(-2) ;
-
-
 sunrise.innerHTML = "sunrise "+formattedTimeSunrise
 
 }
@@ -86,7 +81,6 @@ sunriseFunc();
 
 
 const sunsetFunc = () => {
-
 sunset = document.querySelector(".sunset");
 
 let unix_sunset = json.sys.sunset,
@@ -95,12 +89,9 @@ hours = date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
 formattedTimeSunset = hours + ':' + minutes.substr(-2);
-
-
 sunset.innerHTML ="sunset " +formattedTimeSunset
 
 }
-
 sunsetFunc();
 
 
@@ -115,35 +106,12 @@ windDirection.innerHTML = json.wind.deg + " °"
 let humidity = document.querySelector(".humidity");
 
 humidity.innerHTML = json.main.humidity + " %"
-
 }
-
 
 weatherFunction();
-// setInterval(() => {weatherFunction()}, 20000); 
 
-//Darkmode function is turning on after 8 o'clock
 
-const timeFunction = () =>{
- let body = document.querySelector("body");     
- var today = new Date();
-var time = today.getHours()
-     
-// if(time>19){
-//              body.style.backgroundImage = " url('images/evening-darkmode.png')"
-//       }else{
-//              body.style.backgroundImage = " url('images/evening.png')"  
-//       }
 
-}
-timeFunction();
-setInterval(() => {timeFunction()}, 6000000); 
-
-function   changeCityFunc(){
-       let a 
-       a = a+1
-return a
-}
 
 
 
