@@ -6,30 +6,23 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
                  <title>Weather Forecast</title>
                     <link rel="stylesheet" href="mainStyle.css">
-                        <link rel="stylesheet" href="hamburger-menu.css">
+                  
 </head>
 <body>
     
-    <nav class=hamburger-menu>
-   <a class=hamburger href=#>&#9776;</a>
-   <aside >
-      <ul >
-         
-        <li><a>Home</a></li>
-        
-         <li class="cities-print-selector" value="true"><a>Select City</a>
-            <ul class="cities-print"> </ul>
-        </li>
-        
-        <li><a>Select Country</a></li>
-         <li><a>Darkmode</a></li>
-      </ul>
-   </aside>
-</nav>
 
-    <img src="images/pin_white.png" class = "weather-icon">
+
+    <img src="images/pin_white.png" class = "weather-icon" >
+
+    <div class="type-city">
+        <input value="Legnica"  class="city-input" type="text" name="fruit" list="cities-input-list" autocomplete="off" />
+        <datalist id="cities-input-list">
+        </datalist>
+    <button class="search-btn" onclick="weatherFunction()"><img src="images/magnifiying-glass.png"></button>
+    </div>
+           
     
-            <div class="city-name-wraper">
+    <div class="city-name-wraper">
     
                         <header class="city-name" onclick="weatherFunction()"  > No service</header>
 
@@ -72,42 +65,42 @@
                      </h3>
                             <p class="humidity"></p>
                 </div>
-
         </section>
 
 
-            <section class="forecast">
+<section class="forecast">
                 
                 <div> 
-                    <p class="firstDayForecast">Monday</p>
-                    <p class="firstDayP" id="right-foreast-description">Rain</p>
-                                 <h2 class="first-day-temp">10°C</h2>  
-                                <img src="images/overcast-white.png">        
+                        <p class="firstDayForecast">Monday</p>
+                                <p class="firstDayP" id="right-foreast-description">Rain</p>
+                                        <h2 class="first-day-temp">10°C</h2>  
+                                                           
                 </div>
                     
                 <div> 
-                    <p class="secondDayForecast">Monday</p>
-                    <p class="secondDayP" id="right-foreast-description">Rain</p>
-                                 <h2 class="second-day-temp">10°C</h2>  
-                                <img src="images/overcast-white.png">        
+                        <p class="secondDayForecast">Monday</p>
+                                <p class="secondDayP" id="right-foreast-description">Rain</p>
+                                        <h2 class="second-day-temp">10°C</h2>  
+                                                         
                 </div>
                 
                 <div> 
-                    <p class="thirdDayForecast">Monday</p>
-                    <p class="thirdDayP" id="right-foreast-description">Rain</p>
-                                 <h2 class="third-day-temp">10°C</h2>  
-                                <img src="images/overcast-white.png">        
+                        <p class="thirdDayForecast">Monday</p>
+                                <p class="thirdDayP" id="right-foreast-description">Rain</p>
+                                        <h2 class="third-day-temp">10°C</h2>  
+                                                         
                 </div>
 
                 <div> 
-                    <p class="fourthDayForecast">Monday</p>
-                    <p class="fourthDayP" id="right-foreast-description">Rain</p>
-                                 <h2 class="fourth-day-temp">10°C</h2>  
-                                <img src="images/overcast-white.png" >       
+                        <p class="fourthDayForecast">Monday</p>
+                                <p class="fourthDayP" id="right-foreast-description">Rain</p>
+                                        <h2 class="fourth-day-temp">10°C</h2>  
+                                                          
                 </div>
       
                     </section>
                     
     <script src="index.js"></script>
-    <!-- <script src="forecast.js"></script> -
+<!-- <script src="forecast.js"></script>  -->
 </body>
+</html>

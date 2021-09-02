@@ -1,42 +1,42 @@
-document.addEventListener('click', () => {}); 
-
 
 let cityNumber = 0
+let pinIcon = document.querySelector(".weather-icon");
+
+
+pinIcon.addEventListener("click", () => {document.querySelector(".type-city").style.display = "flex"});
+
+let cityInput = document.querySelector(".city-input");
+
+cityInput.addEventListener("click", ()=>{cityInput.value=""})
+
+
 
 async function weatherFunction(){
 
-       let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"].sort();
-      
-    
+       let citiesList = ["Legnica" ,"Lubin", "Wroclaw", "Zlotoryja", "Jawor ", "Kielce" , "Krakow", "Nysa","Lodz","Gdansk", "Kolobrzeg","Gdynia"];
 
 
-let citiesPrint = document.querySelector(".cities-print");
+       let citiesPrint = document.querySelector("#cities-input-list");
 
        citiesList.forEach((item)=>{
-              let li = document.createElement("li");
-              li.innerText = item;
-              citiesPrint.appendChild(li);
-              li.classList.add("cities-names-li");
+              let opt = document.createElement("option");
+              opt.innerText = item;
+              citiesPrint.appendChild(opt);
             })
 
+let searchBtn = document.querySelector(".search-btn");
+let cityInput = document.querySelector(".city-input");
 
-let singleCity = document.querySelector(".cities-print li");
+let cityy = citiesList[cityNumber];
 
-console.log(singleCity.textContent);
+function dupa(){
+cityy = cityInput.value;
+ return cityy     
+}
+dupa()
 
-singleCity.style.backgroundColor = "black";
 
-
-
-let citiesPrintSelect = document.querySelector(".cities-print-selector")
-
-       citiesPrintSelect.addEventListener("mouseover", ()=>{citiesPrint.style.display = "block"});
-
-              citiesPrintSelect.addEventListener("mouseout", ()=>{citiesPrint.style.display = "none"});
-
-              
-
- let link = "https://api.openweathermap.org/data/2.5/weather?q="+ citiesList[cityNumber] +" ,pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
+ let link = "https://api.openweathermap.org/data/2.5/weather?q="+ cityy+",pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
 
 
        const response = await fetch (link);
