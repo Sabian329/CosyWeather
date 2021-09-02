@@ -28,20 +28,18 @@ async function weatherFunction(){
               opt.innerText = item;
               citiesPrint.appendChild(opt);
             })
-
-let searchBtn = document.querySelector(".search-btn");
+;
 let cityInput = document.querySelector(".city-input");
 
-let cityy = citiesList[cityNumber];
-
-function dupa(){
-cityy = cityInput.value;
- return cityy     
-}
-dupa()
+let city = citiesList[cityNumber];
 
 
- let link = "https://api.openweathermap.org/data/2.5/weather?q="+ cityy+",pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
+city = cityInput.value;
+   
+
+
+
+ let link = "https://api.openweathermap.org/data/2.5/weather?q="+ city+",pl&units=metric&appid=750e57bdaec3cc4c8208faae92e8c059";
 
 
        const response = await fetch (link);
@@ -59,7 +57,6 @@ dupa()
       //Add temperature valiue and round
        temperature.innerHTML = Math.round( Number(json.main.temp)) + "°C";
        weatherDescription.innerHTML = json.weather[0].description
-       console.log("reload")
 
 //Actual weather condition display 
 
@@ -79,7 +76,7 @@ hours = "0" +date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
 formattedTimeSunrise = hours + ':' + minutes.substr(-2) ;
-console.log(formattedTimeSunrise);
+
 
 sunrise.innerHTML = "sunrise "+formattedTimeSunrise
 
@@ -98,7 +95,7 @@ hours = date.getHours(),
 minutes = "0" + date.getMinutes(),
 seconds = "0" + date.getSeconds(),
 formattedTimeSunset = hours + ':' + minutes.substr(-2);
-console.log(formattedTimeSunset);
+
 
 sunset.innerHTML ="sunset " +formattedTimeSunset
 
@@ -119,19 +116,11 @@ let humidity = document.querySelector(".humidity");
 
 humidity.innerHTML = json.main.humidity + " %"
 
-
-
 }
-
-
-
-
 
 
 weatherFunction();
 // setInterval(() => {weatherFunction()}, 20000); 
-
-
 
 //Darkmode function is turning on after 8 o'clock
 
