@@ -1,0 +1,65 @@
+.actual-weather-condytion-dark{
+      -webkit-backdrop-filter: blur(2px);
+      display: flex;
+      flex-wrap: wrap;
+      margin: 3vh;
+      width: 80vw;
+      height: 40vh;
+      border-radius: 50px;
+      background: linear-gradient(145deg, #ffffff3a, #464545);
+      box-shadow:  5px 5px 10px #0a0a0a79,
+             -5px -5px 10px #a09a994b;
+      padding: 2vh;     
+     
+      
+}
+.actual-weather-condytion-dark div{
+     
+      width: 40vw;
+      height: 20vh;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: rgb(58, 58, 58);
+}
+.actual-weather-condytion-dark div h3{
+padding:1vh;
+font-size: 1.2rem;
+      
+}
+
+.actual-weather-condytion-dark img{
+      padding-top: 2vh;
+      width: 10vw;
+}
+.actual-weather-condytion-dark div p{
+      font-size: 1.1rem;
+      font-weight: 600;
+
+}
+
+
+.forecast-dark{
+      padding-top: 4vh;
+      width: max-content
+}
+.forecast-dark div {
+      padding: 4vh;
+      align-items: center;
+      display: flex;
+      flex-flow: wrap;
+      height: 5vh;
+      margin: 3vh;
+      background-color: rgb(0, 0, 0);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: rgb(148, 148, 148);
+      backdrop-filter: blur(400px);
+      border-radius: 10vh;
+      
+}
+.forecast-dark p{
+     text-align: right;
+      margin-right: 10vw;
+      
+}
+
+

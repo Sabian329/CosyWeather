@@ -3,13 +3,56 @@
 <head>
     <meta charset="utf-8">
         <meta name="description" content="opis witryny">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
                  <title>Weather Forecast</title>
                     <link rel="stylesheet" href="mainStyle.css">
+                    <link rel="stylesheet" href="darkmode-buttons.css">
+                    <link rel="stylesheet" href="node_modules/hamburger-menu/dist/hamburger-menu.css">
+                    <link rel="stylesheet" href="darkmode.css">
+
                   
 </head>
 <body>
+
+    <nav class=hamburger-menu>
+        <a class=hamburger href=#>&#9776;</a>
+        <aside>
+           <ul>
+       
+            <li><button class="darkmode-nav">Light & Dark</button></li>
+            
+        <li>
+                  
+                <div class="hiden-darmode-btns">
+                <div class="wrapper-darkmode"> 
+                    <label> 
+                        <input class="darkmodein" type="radio" name="group" onclick="darkLightMode(false)" /> 
+                        <span class="radio-pulse" ></span>
+                        <span class="radio-button"> 
+                            <span class="radio-button-inner" ></span>
+                         </span>
+                          <span class="radio-label">Dark</span> 
+                        </label> 
+                 <label>
+                      <input class="darkmodein"  type="radio" name="group" checked = "true" onclick="darkLightMode(true)"/> 
+                      <span class="radio-pulse" > </span>
+                      <span class="radio-button"> 
+                          <span class="radio-button-inner" ></span> 
+                        </span>
+                        <span class="radio-label">Light</span> 
+                    </label> 
+                </div>
+            </div>
+        
+        </li>
+              
+           </ul>
+        </aside>
+     </nav>
+
     
+
+
 
 
     <img src="images/pin_white.png" class = "weather-icon" >
@@ -24,7 +67,7 @@
     
     <div class="city-name-wraper">
     
-                        <header class="city-name" onclick="weatherFunction()"  > No service</header>
+                        <header class="city-name"  > No service</header>
 
             </div>
 
@@ -33,8 +76,8 @@
 
         <h1 class="city-cord">Wait</h1>
        
-        
-        <section class="actual-weather-condytion">
+
+        <section class="actual-weather-condytion" id="actual-weather-condytion_id">
 
                 <div> 
                     <h3>
@@ -68,7 +111,7 @@
         </section>
 
 
-<section class="forecast">
+<section class="forecast" id="forecast_id">
                 
                 <div> 
                         <p class="firstDayForecast">Monday</p>
@@ -93,14 +136,16 @@
 
                 <div> 
                         <p class="fourthDayForecast">Monday</p>
+                        
                                 <p class="fourthDayP" id="right-foreast-description">Rain</p>
                                         <h2 class="fourth-day-temp">10°C</h2>  
                                                           
                 </div>
       
                     </section>
+
                     
     <script src="index.js"></script>
-<!-- <script src="forecast.js"></script>  -->
+<script src="forecast.js"></script> 
 </body>
 </html>

@@ -1,6 +1,11 @@
 // click on pin- display input
 let pinIcon = document.querySelector(".weather-icon");
-pinIcon.addEventListener("click", () => {document.querySelector(".type-city").style.display = "flex"});
+pinIcon.addEventListener("click", () => {
+     // document.querySelector(".type-city").style.display = "flex"
+     document.querySelector(".type-city").style.visibility = "visible"
+     document.querySelector(".type-city").style.opacity = "1"
+     document.querySelector(".type-city").style.animation ="slidein 0.5s "
+});
 
 
 //click on input- reset input value
@@ -9,8 +14,11 @@ cityInput.addEventListener("click", ()=>{cityInput.value=""})
 
 //click on search - display none for input & button
 let searchBtn = document.querySelector(".search-btn");
-searchBtn.addEventListener("click", ()=>{document.querySelector(".type-city").style.display = "none"})
-
+searchBtn.addEventListener("click", ()=>{
+     document.querySelector(".type-city").style.visibility = "hidden"
+     document.querySelector(".type-city").style.opacity = "0"
+     document.querySelector(".type-city").style.animation ="slideout 0.5s "}
+     )
 
 
 let cityNumber = 0
@@ -26,7 +34,50 @@ citiesList.forEach((item)=>{
        citiesPrint.appendChild(opt);
      });
 
+          cityInput.addEventListener("keyup", function(event) {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            searchBtn.click();
+          }
+        });
 
+let darkmodeNav = document.querySelector(".darkmode-nav");
+darkmodeNav.addEventListener("mouseover", ()=>{
+     document.querySelector(".hiden-darmode-btns").style.display = "block"
+})
+
+//hambuurger working
+document.addEventListener('click', () => {}); 
+
+// Darkmode by buttons
+let actualWeatherSection = document.querySelector("#actual-weather-condytion_id")
+let forecastId = document.querySelector("#forecast_id")
+
+
+const darkLightMode = (bool) =>{
+let siteBody = document.querySelector("body");
+     if(bool){
+     siteBody.style.backgroundImage = "url(images/evening.png)"
+     actualWeatherSection.classList.remove("actual-weather-condytion-dark"); 
+     actualWeatherSection.classList.add("actual-weather-condytion")
+
+     forecastId.classList.remove("forecast-dark"); 
+     forecastId.classList.add("forecast")
+
+}else{
+    
+     siteBody.style.backgroundImage = "url(images/evening-darkmode.png)"
+     actualWeatherSection.classList.remove("actual-weather-condytion"); 
+     actualWeatherSection.classList.add("actual-weather-condytion-dark")
+     
+     forecastId.classList.remove("forecast"); 
+     forecastId.classList.add("forecast-dark")
+
+}
+}
 
 
 
@@ -40,15 +91,29 @@ city = cityInput.value;
 
 
        const response = await fetch (link);
-        const json = await response.json( );
+     const json = await response.json( );
+       
        
       
       let cityName =document.querySelector('header'),
        weatherDescription =document.querySelector(".weather-description")
        temperature =document.querySelector('.city-cord');
 
-      // Add city name
- cityName.innerHTML =json.name 
+
+
+ if(city == "" ){
+      cityName.innerHTML ="Type your city"
+      cityName.style.fontSize = "1rem"
+      cityName.style.color ="#ff0000"
+ }else if(response.status == 404){
+     cityName.innerHTML = "City not found"
+     cityName.style.fontSize = "1rem"
+      cityName.style.color ="#ff0000"
+ }else{
+cityName.innerHTML =json.name 
+cityName.style.fontSize = "3rem"
+      cityName.style.color ="#ffffff"
+ }
 
 
       //Add temperature valiue and round
@@ -109,8 +174,6 @@ humidity.innerHTML = json.main.humidity + " %"
 }
 
 weatherFunction();
-
-
 
 
 
