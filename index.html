@@ -9,6 +9,7 @@
                     <link rel="stylesheet" href="darkmode-buttons.css">
                     <link rel="stylesheet" href="hamburger-menu.css">
                     <link rel="stylesheet" href="darkmode.css">
+                    <link rel="stylesheet" href="coutrisList.css">
 
                   
 </head>
@@ -34,7 +35,7 @@
                           <span class="radio-label">Dark</span> 
                         </label> 
                  <label>
-                      <input class="darkmodein"  type="radio" name="group" checked = "true" onclick="darkLightMode(true)"/> 
+                      <input checked = "true" class="darkmodein"  type="radio" name="group"  onclick="darkLightMode(true)"/> 
                       <span class="radio-pulse" > </span>
                       <span class="radio-button"> 
                           <span class="radio-button-inner" ></span> 
@@ -43,9 +44,34 @@
                     </label> 
                 </div>
             </div>
-        
+            
         </li>
               
+        <li><button class="country-nav">Select country</button></li>
+        <li>
+
+            <div class="hiden-country-btns">
+                <div class="wrapper-country"> 
+                    <label> 
+                             <input class="countryinput" type="radio" name="group" checked = "true" /> 
+                                <span class="Cradio-pulse" ></span>
+                                    <span class="Cradio-button"> 
+                                         <span class="Cradio-button-inner" ></span>
+                                </span>
+                            <span class="Cradio-label">Poland</span> 
+                        </label> 
+                 <label>
+                            <input class="countryinput"  type="radio" name="group"  /> 
+                                    <span class="Cradio-pulse" > </span>
+                                        <span class="Cradio-button"> 
+                                     <span class="Cradio-button-inner" ></span> 
+                            </span>
+                        <span class="Cradio-label">USA</span> 
+                    </label> 
+                </div>
+            </div>
+
+        </li>
            </ul>
         </aside>
      </nav>
@@ -53,7 +79,7 @@
     
 
 
-
+     <p class="tap">tap the pin</p>
 
     <img src="images/pin_white.png" class = "weather-icon" >
 
@@ -146,6 +172,6 @@
 
                     
     <script src="index.js"></script>
-<script src="forecast.js"></script> 
+<!-- <script src="forecast.js"></script>  -->
 </body>
 </html>

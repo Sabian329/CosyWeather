@@ -2,7 +2,7 @@
 display: none;
 
 }
-.wrapper-darkmode { 
+.wrapper-darkmode {  
       display: flex; 
       margin-top: 2vh;
       gap: 2rem; 
@@ -95,4 +95,7 @@ label {
                   }   
                   .darkmodein:checked ~ .radio-label {      
                   color: rgba(255, 255, 255, 0.96); 
+                  }
+                  .weather-icon-dark :hover{
+                        filter: invert(0%)
                   }

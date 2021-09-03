@@ -5,6 +5,7 @@ pinIcon.addEventListener("click", () => {
      document.querySelector(".type-city").style.visibility = "visible"
      document.querySelector(".type-city").style.opacity = "1"
      document.querySelector(".type-city").style.animation ="slidein 0.5s "
+     document.querySelector(".tap").style.display ="none "
 });
 
 
@@ -17,7 +18,9 @@ let searchBtn = document.querySelector(".search-btn");
 searchBtn.addEventListener("click", ()=>{
      document.querySelector(".type-city").style.visibility = "hidden"
      document.querySelector(".type-city").style.opacity = "0"
-     document.querySelector(".type-city").style.animation ="slideout 0.5s "}
+     document.querySelector(".type-city").style.animation ="slideout 0.5s "
+     document.querySelector(".tap").style.display ="block"
+}
      )
 
 
@@ -57,10 +60,11 @@ let actualWeatherSection = document.querySelector("#actual-weather-condytion_id"
 let forecastId = document.querySelector("#forecast_id")
 
 
+
 const darkLightMode = (bool) =>{
 let siteBody = document.querySelector("body");
      if(bool){
-     siteBody.style.backgroundImage = "url(images/evening.png)"
+     siteBody.style.backgroundImage = "url(images/view.png)"
      actualWeatherSection.classList.remove("actual-weather-condytion-dark"); 
      actualWeatherSection.classList.add("actual-weather-condytion")
 
@@ -68,16 +72,22 @@ let siteBody = document.querySelector("body");
      forecastId.classList.add("forecast")
 
 }else{
-    
-     siteBody.style.backgroundImage = "url(images/evening-darkmode.png)"
+    //dark mode
+     siteBody.style.backgroundImage = "url(images/view-dark.png)"
      actualWeatherSection.classList.remove("actual-weather-condytion"); 
      actualWeatherSection.classList.add("actual-weather-condytion-dark")
      
      forecastId.classList.remove("forecast"); 
      forecastId.classList.add("forecast-dark")
+     
+     forecastId.classList.remove("forecast"); 
+     forecastId.classList.add("forecast-dark")
+}
+}
 
-}
-}
+document.querySelector(".country-nav").addEventListener("click", ()=>{
+     document.querySelector(".hiden-country-btns").style.display = "block"
+})
 
 
 
