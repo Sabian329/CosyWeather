@@ -113,15 +113,12 @@ city = cityInput.value;
 
  if(city == "" ){
       cityName.innerHTML ="Type your city"
-      cityName.style.fontSize = "1rem"
       cityName.style.color ="#ff0000"
  }else if(response.status == 404){
      cityName.innerHTML = "City not found"
-     cityName.style.fontSize = "1rem"
       cityName.style.color ="#ff0000"
  }else{
 cityName.innerHTML =json.name 
-cityName.style.fontSize = "3rem"
       cityName.style.color ="#ffffff"
  }
 
