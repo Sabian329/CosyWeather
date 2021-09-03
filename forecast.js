@@ -1,6 +1,6 @@
 // downloading API informations about weather
 async function forecastFunction(){
-      const response = await fetch ("https://dataservice.accuweather.com/forecasts/v1/daily/5day/273127?apikey=p70WhDTxJcG0NndfXJuqPEnK41MCULkC&metric=true");
+      const response = await fetch ("https://dataservice.accuweather.com/forecasts/v1/daily/5day/273127?apikey=yuKlGFiezWvmbt6eh382nlyHI5iAQeIymetric=true");
       const json = await response.json( );
       
      let firstDayP= document.querySelector(".firstDayP")

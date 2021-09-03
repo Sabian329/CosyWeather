@@ -85,9 +85,6 @@ let siteBody = document.querySelector("body");
 }
 }
 
-document.querySelector(".country-nav").addEventListener("click", ()=>{
-     document.querySelector(".hiden-country-btns").style.display = "block"
-})
 
 
 
