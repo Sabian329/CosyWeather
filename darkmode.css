@@ -29,6 +29,7 @@ font-size: 1.2rem;
 .actual-weather-condytion-dark img{
       padding-top: 2vh;
       width: 10vw;
+      filter: invert(50%)
 }
 .actual-weather-condytion-dark div p{
       font-size: 1.1rem;

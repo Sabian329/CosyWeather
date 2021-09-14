@@ -4,19 +4,21 @@ nav button{
    color: white;
    background-color: rgba(175, 175, 175, 0);
    padding: 1rem;
+   z-index: 1000;
    }
 body {
    padding-top: 0px;
    padding-bottom: 0px;
    margin: 0px;
    }
+  
 nav.hamburger-menu a.hamburger {
    display: none;
    color: inherit;
    background-color: inherit;
-   -webkit-backdrop-filter: blur(2px);
    }
 nav.hamburger-menu aside {
+ 
    position: fixed;
    top: 0px;
    bottom: 0px;
@@ -36,8 +38,9 @@ nav.hamburger-menu aside ul {
 nav.hamburger-menu aside ul li a ,
 nav.hamburger-menu aside ul li a div
 {
+ 
    display: block;
-   font-size: 1.1rem;
+   font-size: 1.2rem;
    font-weight: bold;
    text-align: left;
    text-decoration: none;
@@ -50,11 +53,13 @@ nav.hamburger-menu aside ul li a div
    }
 nav.hamburger-menu aside ul li.current >a,  /* highlighted menu item */
  {
+   z-index: 1000;
    border-color: inherit;
    cursor: default;
    }
 nav.hamburger-menu aside ul ul li a,  /* nested menu item */
  {
+    z-index: 1000;
    font-size: 0.8rem;
    padding: 4px 0px 4px 30px;
    }
@@ -66,15 +71,21 @@ nav.hamburger-menu aside ul ul li a,  /* nested menu item */
    nav.hamburger-menu {
       cursor: auto;
       }
+      /* rolled hamburger*/
    nav.hamburger-menu a.hamburger {
+      position:absolute;
+      left: 0;
+      top:0;
+      background-color: #fff;
       display: block;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      font-size: 1.4rem;
+      font-size: 3rem;
+      text-align: center;
       font-weight: bold;
       text-decoration: none;
-      padding: 6px 10px 8px 8px;
+      width: 4rem;
+      height: 4rem;
+      z-index: 1000;
+      
       }
    nav.hamburger-menu a.hamburger:not(:hover) {
       transition: opacity 0.9s 0.8s;  /* delay to allow menu time to hide */
@@ -88,6 +99,7 @@ nav.hamburger-menu aside ul ul li a,  /* nested menu item */
       transition: max-width 1.0s;
       }
    nav.hamburger-menu aside ul li {
+      z-index: 1000;
       white-space: nowrap;
       }
    nav.hamburger-menu:not(.collapse-menu):hover .hamburger + aside {
@@ -95,6 +107,8 @@ nav.hamburger-menu aside ul ul li a,  /* nested menu item */
       overflow-y: scroll;
       }
    }
+
+ 
 
 /******************************************************************************/
 /* [override this section to customize]                                       */
@@ -105,11 +119,13 @@ body {
    }
 nav.hamburger-menu aside {
    height: max-content;
-   width: max-content;              /* menu width */
+   width: max-content;   
+   z-index: 1000;           /* menu width */
    }
 nav.hamburger-menu {
    color: gainsboro;            /* menu font color */
    background-color: rgba(71, 71, 71, 0.651); 
+   z-index: 1000;
    
   /* menu background color */
    }
@@ -123,7 +139,7 @@ nav.hamburger-menu aside ul li >a:hover {
    background-color: darkcyan;  /* menu background highlight color */
    }
 /******************************************************************************/
-@media (min-width: 650px) { 
+@media (min-width: 800px) { 
    .hamburger-menu{
       display: none;
    }

@@ -1,6 +1,6 @@
 // downloading API informations about weather
 async function forecastFunction(){
-      const response = await fetch ("https://dataservice.accuweather.com/forecasts/v1/daily/5day/273127?apikey=yuKlGFiezWvmbt6eh382nlyHI5iAQeIymetric=true");
+      const response = await fetch ("https://dataservice.accuweather.com/forecasts/v1/daily/5day/273127?apikey=yuKlGFiezWvmbt6eh382nlyHI5iAQeIy&metric=true");
       const json = await response.json( );
       
      let firstDayP= document.querySelector(".firstDayP")
@@ -50,7 +50,8 @@ let actualDayNumber = new Date().getDay();
 
 new Date().getDay();
 
-document.querySelector(".firstDayForecast").innerHTML =  days[actualDayNumber ];
+document.querySelector(".firstDayForecast").innerHTML =  `Today `;
+
 
 if(actualDayNumber == 6){
        document.querySelector(".secondDayForecast").innerHTML =  days[0];
