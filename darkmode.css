@@ -1,4 +1,5 @@
 .actual-weather-condytion-dark{
+      justify-content: space-between;
       -webkit-backdrop-filter: blur(29px);
       backdrop-filter: blur(29px);
       padding: 1rem;
