@@ -41,7 +41,8 @@ font-size: 1.2rem;
 
 .forecast-dark{
       padding-top: 4vh;
-      width: max-content
+      width: max-content;
+      
 }
 .forecast-dark div {
       padding: 4vh;
@@ -55,6 +56,7 @@ font-size: 1.2rem;
       -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
       border: solid 1px;
+      justify-content: space-between;
       
 }
 .forecast-dark p{
