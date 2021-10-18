@@ -1,152 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-        <meta name="description" content="opis witryny">
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-                 <title>Weather Forecast</title>
-                    <link rel="stylesheet" href="mainStyle.css">
-                    <link rel="stylesheet" href="darkmode-buttons.css">
-                    <link rel="stylesheet" href="hamburger-menu.css">
-                    <link rel="stylesheet" href="darkmode.css">
-                    <link rel="stylesheet" href="coutrisList.css">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./images/pageicon.png" />
 
-                  
-</head>
-<body>
-
-    <nav class=hamburger-menu>
-        <a class=hamburger href=#>&#9776;</a>
-        <aside>
-           <ul>
-            <li><button class="darkmode-nav">Light & Dark</button></li>
-        <li>
-                <div class="hiden-darmode-btns">
-                <div class="wrapper-darkmode"> 
-                    <label> 
-                        <input class="darkmodein" type="radio" name="group" onclick="darkLightMode(false)" /> 
-                        <span class="radio-pulse" ></span>
-                        <span class="radio-button"> 
-                            <span class="radio-button-inner" ></span>
-                         </span>
-                          <span class="radio-label">Dark</span> 
-                        </label> 
-                 <label>
-                      <input checked = "true" class="darkmodein"  type="radio" name="group"  onclick="darkLightMode(true)"/> 
-                      <span class="radio-pulse" > </span>
-                      <span class="radio-button"> 
-                          <span class="radio-button-inner" ></span> 
-                        </span>
-                        <span class="radio-label">Light</span> 
-                    </label> 
-                </div>
+    <meta name="description" content="opis witryny" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="mainStyle.css" />
+    <link rel="stylesheet" href="darkmode-buttons.css" />
+    <link rel="stylesheet" href="hamburger-menu.css" />
+    <link rel="stylesheet" href="darkmode.css" />
+    <link rel="stylesheet" href="coutrisList.css" />
+  </head>
+  <body>
+    <nav class="hamburger-menu">
+      <a class="hamburger" href="#">&#9776;</a>
+      <aside>
+        <ul>
+          <li><button class="darkmode-nav">Light & Dark</button></li>
+          <li>
+            <div class="hiden-darmode-btns">
+              <div class="wrapper-darkmode">
+                <label>
+                  <input
+                    class="darkmodein"
+                    type="radio"
+                    name="group"
+                    onclick="darkLightMode(false)"
+                  />
+                  <span class="radio-pulse"></span>
+                  <span class="radio-button">
+                    <span class="radio-button-inner"></span>
+                  </span>
+                  <span class="radio-label">Dark</span>
+                </label>
+                <label>
+                  <input
+                    checked="true"
+                    class="darkmodein"
+                    type="radio"
+                    name="group"
+                    onclick="darkLightMode(true)"
+                  />
+                  <span class="radio-pulse"> </span>
+                  <span class="radio-button">
+                    <span class="radio-button-inner"></span>
+                  </span>
+                  <span class="radio-label">Light</span>
+                </label>
+              </div>
             </div>
-        </li>
-           </ul>
-        </aside>
-     </nav>
-    
-    
-   
-    
-    
-    
+          </li>
+        </ul>
+      </aside>
+    </nav>
 
+    <p class="tap">tap the pin</p>
 
-     <p class="tap">tap the pin</p>
-
-    <img src="images/pin_white.png" class = "weather-icon" >
+    <img src="images/pin_white.png" class="weather-icon" />
 
     <div class="type-city">
-        <input value="Legnica"  class="city-input" type="text" name="fruit" list="cities-input-list" autocomplete="off" />
-        <datalist id="cities-input-list">
-        </datalist>
-    <button class="search-btn" onclick="weatherFunction()"><img src="images/magnifiying-glass.png"></button>
+      <input
+        value="Legnica"
+        class="city-input"
+        type="text"
+        name="fruit"
+        list="cities-input-list"
+        autocomplete="off"
+      />
+      <datalist id="cities-input-list"> </datalist>
+      <button class="search-btn" onclick="weatherFunction()">
+        <img src="images/magnifiying-glass.png" />
+      </button>
     </div>
-           
-    
+
     <div class="city-name-wraper">
-    
-                        <header class="city-name"  > No service</header>
+      <header class="city-name">No service</header>
+    </div>
 
-            </div>
+    <h3 class="weather-description">Please</h3>
 
+    <h1 class="city-cord">Wait</h1>
 
-         <h3 class="weather-description">Please</h3>
+    <section class="actual-weather-condytion" id="actual-weather-condytion_id">
+      <div>
+        <h3>
+          <img src="images/pressure-new.png" alt="pressure" />
+        </h3>
+        <p class="pressure-value"></p>
+      </div>
 
-        <h1 class="city-cord">Wait</h1>
-       
+      <div>
+        <h3>
+          <img src="images/sunrise.png" alt="sun icon" />
+        </h3>
+        <p class="sunrise"></p>
+        <p class="sunset"></p>
+      </div>
 
-        <section class="actual-weather-condytion" id="actual-weather-condytion_id">
+      <div>
+        <h3>
+          <img src="images/wind.png" alt="" />
+        </h3>
+        <p class="wind-speed"></p>
+        <p class="wind-direction"></p>
+      </div>
 
-                <div> 
-                    <h3>
-                        <img src="images/pressure-new.png" alt="pressure">
-                    </h3>
-                         <p class="pressure-value"></p>
-                 </div>
-            
-                <div>
-                    <h3> 
-                        <img src="images/sunrise.png" alt="sun icon">
-                    </h3>
-                        <p class="sunrise"></p>
-                        <p class="sunset"></p>
-                </div>
-            
-                 <div>
-                     <h3> 
-                         <img src="images/wind.png" alt="">
-                     </h3>
-                            <p class="wind-speed"></p>
-                            <p class="wind-direction"></p>
-                </div>
-            
-                 <div>
-                     <h3> 
-                         <img src="images/humidity.png" alt="">
-                     </h3>
-                            <p class="humidity"></p>
-                </div>
-        </section>
+      <div>
+        <h3>
+          <img src="images/humidity.png" alt="" />
+        </h3>
+        <p class="humidity"></p>
+      </div>
+    </section>
 
-        <p class="forecast-info">Forecast for Legnica</p>
+    <p class="forecast-info">Forecast for Legnica</p>
 
-<section class="forecast" id="forecast_id">
-                
-                <div> 
-                        <p class="firstDayForecast">Monday</p>
-                                <p class="firstDayP" id="right-foreast-description">Rain</p>
-                                        <h2 class="first-day-temp">10°C</h2>  
-                                                           
-                </div>
-                    
-                <div> 
-                        <p class="secondDayForecast">Monday</p>
-                                <p class="secondDayP" id="right-foreast-description">Rainsss</p>
-                                        <h2 class="second-day-temp">10°C</h2>  
-                                                         
-                </div>
-                
-                <div> 
-                        <p class="thirdDayForecast">Monday</p>
-                                <p class="thirdDayP" id="right-foreast-description">Raindasd</p>
-                                        <h2 class="third-day-temp">10°C</h2>  
-                                                         
-                </div>
+    <section class="forecast" id="forecast_id">
+      <div>
+        <p class="firstDayForecast">Monday</p>
+        <p class="firstDayP" id="right-foreast-description">Rain</p>
+        <h2 class="first-day-temp">10°C</h2>
+      </div>
 
-                <div> 
-                        <p class="fourthDayForecast">Monday</p>
-                        
-                                <p class="fourthDayP" id="right-foreast-description">Rain dhkgsakdg</p>
-                                        <h2 class="fourth-day-temp">10°C</h2>  
-                                                          
-                </div>
-      
-                    </section>
+      <div>
+        <p class="secondDayForecast">Monday</p>
+        <p class="secondDayP" id="right-foreast-description">Rainsss</p>
+        <h2 class="second-day-temp">10°C</h2>
+      </div>
 
-                    
+      <div>
+        <p class="thirdDayForecast">Monday</p>
+        <p class="thirdDayP" id="right-foreast-description">Raindasd</p>
+        <h2 class="third-day-temp">10°C</h2>
+      </div>
+
+      <div>
+        <p class="fourthDayForecast">Monday</p>
+
+        <p class="fourthDayP" id="right-foreast-description">Rain dhkgsakdg</p>
+        <h2 class="fourth-day-temp">10°C</h2>
+      </div>
+    </section>
+
     <script src="index.js"></script>
-<script src="forecast.js"></script> 
-</body>
+    <script src="forecast.js"></script>
+  </body>
 </html>
